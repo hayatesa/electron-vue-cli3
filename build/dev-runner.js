@@ -48,7 +48,9 @@ let manualRestart = false
 
 function startMainProcess () {
   return new Promise((resolve, reject) => {
-    // mainConfig.entry.main = [path.join(__dirname, '../main/index.dev.js')].concat(mainConfig.entry.main)
+    mainConfig.entry.main = [path.join(__dirname, '../main/index.dev.js')].concat(mainConfig.entry.main)
+
+    mainConfig.mode = 'development'
 
     const compiler = webpack(mainConfig)
 
@@ -57,6 +59,20 @@ function startMainProcess () {
         console.log(err)
         return
       }
+
+      // console.log(stats)
+
+      // if (electronProcess && electronProcess.kill) {
+      //   manualRestart = true
+      //   process.kill(electronProcess.pid)
+      //   electronProcess = null
+      //   startElectron()
+      //
+      //   setTimeout(() => {
+      //     manualRestart = false
+      //   }, 5000)
+      // }
+
       resolve()
     })
   })
