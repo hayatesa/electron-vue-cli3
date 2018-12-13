@@ -4,19 +4,23 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-runner",
+    "build": "node build/build && electron-builder --win",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build_vue": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "node test/test"
   },
   "dependencies": {
-    "electron": "^3.0.11",
     "request": "^2.79.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "electron": "^3.0.11",
+    "electron-builder": "^19.56.2",
+    "del": "^3.0.0",
+    "multispinner": "^0.2.1",
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-plugin-eslint": "^3.2.0",
     "@vue/cli-service": "^3.2.0",
@@ -40,7 +44,7 @@
       "output": "build"
     },
     "files": [
-      "dist/electron/**/*"
+      "dist/**/*"
     ],
     "asar": true,
     "nsis": {

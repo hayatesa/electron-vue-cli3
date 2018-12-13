@@ -2,9 +2,13 @@ const { app, BrowserWindow } = require('electron')
 // 引入electron
 let win
 
+const path = require('path')
+
+let filePath = path.resolve(__dirname, '../index.html')
+
 let winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:8090`
-  : `file://${__dirname}/index.html`
+  : `file://${filePath}`
 
 // winURL = 'http://localhost:9080'
 
