@@ -5,6 +5,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+Vue.use(require('vue-electron'))
+
 new Vue({
   router,
   store,
