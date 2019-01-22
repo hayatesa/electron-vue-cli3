@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: './',
+  publicPath: './',
   chainWebpack: config => {
   },
   configureWebpack: config => {

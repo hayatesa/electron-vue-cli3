@@ -45,7 +45,7 @@
       "dist/electron/**/*"
     ],
     "win": {
-      "icon": "public/icons/icon.ico"
+      "icon": "build/icons/icon.ico"
     }
   }
 }
