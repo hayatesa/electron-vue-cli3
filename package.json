@@ -2,11 +2,10 @@
   "name": "my_project",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/electron/main.js",
   "scripts": {
     "dev": "node build/dev-runner",
     "build": "node build/build && electron-builder --win",
-    "serve": "vue-cli-service serve",
-    "build_vue": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "node test/test"
   },
@@ -37,26 +36,16 @@
     "webpack-cli": "^3.1.2"
   },
   "build": {
-    "afterPack": "",
     "productName": "electron+vue集成",
-    "appId": "",
+    "appId": "org.simulatedgreg.yourapp",
     "directories": {
-      "output": "build"
+      "output": "release"
     },
     "files": [
-      "dist/**/*"
+      "dist/electron/**/*"
     ],
-    "asar": true,
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "perMachine": true,
-      "runAfterFinish": false,
-      "artifactName": "${productName} Setup ${version}.${ext}"
-    },
     "win": {
-      "icon": "publish/favicon.ico",
-      "requestedExecutionLevel": "requireAdministrator"
+      "icon": "public/icons/icon.ico"
     }
   }
 }

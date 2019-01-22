@@ -22,7 +22,8 @@ const args = {
   open: false,
   copy: false,
   https: false,
-  verbose: false
+  verbose: false,
+  dest: 'dist/electron'
 }
 
 build()
