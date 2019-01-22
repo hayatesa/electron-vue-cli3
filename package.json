@@ -4,8 +4,8 @@
   "private": true,
   "main": "./dist/electron/main.js",
   "scripts": {
-    "dev": "node build/dev-runner",
-    "build": "node build/build && electron-builder --win",
+    "dev": "node .electron-vue/dev-runner",
+    "build": "node .electron-vue/build && electron-builder --win",
     "lint": "vue-cli-service lint",
     "test": "node test/test"
   },
@@ -39,7 +39,7 @@
     "productName": "electron+vue集成",
     "appId": "org.simulatedgreg.yourapp",
     "directories": {
-      "output": "release"
+      "output": "build"
     },
     "files": [
       "dist/electron/**/*"
